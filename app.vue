@@ -2,7 +2,7 @@
   <NuxtLayout>
     <v-app>
       <v-main>
-        <HelloWorld />
+        <NuxtPage />
       </v-main>
     </v-app>
   </NuxtLayout>

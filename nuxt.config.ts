@@ -7,11 +7,12 @@ export default defineNuxtConfig({
   modules: [
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }))
+        // @ts-ignore
+        config.plugins.push(vuetify({
+          autoImport: true
+        }))
       })
     },
-    //...
   ],
   vite: {
     vue: {
@@ -20,4 +21,13 @@ export default defineNuxtConfig({
       },
     },
   },
+  typescript: {
+    typeCheck: true,
+    strict: true,
+    tsConfig: {
+      compilerOptions: {
+        types: ['vuetify']
+      },
+    }
+  }
 })
